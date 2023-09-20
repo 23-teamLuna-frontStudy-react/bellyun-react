@@ -9,7 +9,6 @@ import router from './Router';
 import { QueryClient,QueryClientProvider } from 'react-query';
 import {ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot, useRecoilValue } from 'recoil';
-import { isDarkAtom } from './routes/atoms';
 const queryClient = new QueryClient();
 
 
