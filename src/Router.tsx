@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Coin from "./routes/Coin";
 import Coins from "./routes/Coins";
 import Chart from "./routes/Chart";

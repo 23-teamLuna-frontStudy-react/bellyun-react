@@ -1,28 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import  { GlobalStyle } from './App';
+import  App, { GlobalStyle } from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'styled-components';
-import { theme } from './theme';
 import { RouterProvider } from 'react-router-dom';
 import router from './Router';
 import { QueryClient,QueryClientProvider } from 'react-query';
 import {ReactQueryDevtools } from 'react-query/devtools';
+import { RecoilRoot, useRecoilValue } from 'recoil';
+import { isDarkAtom } from './routes/atoms';
 const queryClient = new QueryClient();
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <RecoilRoot>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle/>
-        <RouterProvider router ={router}></RouterProvider>
-        <ReactQueryDevtools initialIsOpen={true}/>
-      </ThemeProvider>
+      <App/>
     </QueryClientProvider>
+    </RecoilRoot>
   </React.StrictMode>,
 );
 
